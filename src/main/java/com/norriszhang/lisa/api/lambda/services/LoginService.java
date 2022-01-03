@@ -71,4 +71,11 @@ public class LoginService {
 
         return null;
     }
+
+    public void checkLogin(String sessionId) {
+        Session session = dbMapper.load(Session.class, sessionId);
+        if (session == null) {
+            throw new RuntimeException("No login info found.");
+        }
+    }
 }

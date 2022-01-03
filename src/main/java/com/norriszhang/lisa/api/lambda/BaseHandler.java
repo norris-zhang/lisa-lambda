@@ -19,10 +19,10 @@ public class BaseHandler {
         return response;
     }
 
-    protected APIGatewayV2ProxyResponseEvent bodyNotFound() {
+    protected APIGatewayV2ProxyResponseEvent parametersNotFound() {
         APIGatewayV2ProxyResponseEvent response = ResponseHelper.getResponseTemplate(401);
         Map<String, Object> result = new HashMap<>();
-        result.put("message", "Request body not found");
+        result.put("message", "Request parameters not found");
         response.setBody(gson.toJson(result));
         return response;
     }
